@@ -10,6 +10,7 @@ import MoonBuy from "../features/MoonBuy";
 import BaseFund from "../features/BaseFund";
 import BaseDeposit from "../features/BaseDeposit";
 import BaseSwap from "../features/BaseSwap";
+import CDPFund from "../features/CDPFund";
 
 const actionButtons = [
   {
@@ -33,7 +34,7 @@ const actionComponents = {
   Send: () => <div>Send form here</div>,
   Swap: ({ address }) => <BaseSwap address={address} />,
   Deposit: ({ address }) => <BaseDeposit address={address} />,
-  Buy: ({ address }) => <BaseFund address={address} />,
+  Buy: CDPFund,
 };
 
 export default function SheetActions() {

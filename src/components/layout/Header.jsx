@@ -4,8 +4,8 @@ import Anchor from "../ui/Anchor";
 
 const navBtns = [
   {
-    text: "Home",
-    url: "/",
+    text: "Browse Survey",
+    url: "/browse-survey",
     id: "home-btn",
   },
   {

@@ -1,3 +1,6 @@
+import BaseMintCard from "@/components/features/BaseMintCard";
+import CDPFund from "@/components/features/CDPFund";
+
 
 export default function Home() {
   return (
