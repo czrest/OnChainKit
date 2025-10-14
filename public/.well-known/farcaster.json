@@ -1,0 +1,26 @@
+{
+  "frame": {
+    "version": "1",
+    "name": "Decentralized Survey Hub",
+    "iconUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_2091ae51-06b5-48e5-ba22-ea1e91f62021-3qyXk9dPw8djbomBEoEFgVCC8DlHvz",
+    "homeUrl": "https://receive-thank-811.app.ohara.ai",
+    "imageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_2091ae51-06b5-48e5-ba22-ea1e91f62021-3qyXk9dPw8djbomBEoEFgVCC8DlHvz",
+    "buttonTitle": "Open with Ohara",
+    "splashImageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/farcaster/splash_images/splash_image1.svg",
+    "splashBackgroundColor": "#ffffff",
+    "tags": [
+      "ohara",
+      "mini-app",
+      "base",
+      "farcaster"
+    ],
+    "primaryCategory": "entertainment",
+    "ogTitle": "Decentralized Survey Hub",
+    "ogImageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_2091ae51-06b5-48e5-ba22-ea1e91f62021-3qyXk9dPw8djbomBEoEFgVCC8DlHvz"
+  },
+  "baseBuilder": {
+    "allowedAddresses": [
+      ""
+    ]
+  }
+}

@@ -40,7 +40,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="flex w-92 justify-end items-center gap-5">
-          <WalletSheet />
+          {/* <WalletSheet /> */}
           <WalletAccount />
         </div>
       </header>
