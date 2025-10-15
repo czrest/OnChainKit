@@ -373,28 +373,25 @@ export default function CreateSurveyPage() {
                             </FormItem>
                           )}
                         />
-
-                        <div className="grid grid-cols-12 gap-4">
-                          <div className="col-span-4">
-                            <FormField
-                              control={form.control}
-                              name="screeningDateTime"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>Screening Date & Time</FormLabel>
-                                  <FormControl>
-                                    <SmartDatetimeInput
-                                      value={field.value}
-                                      onValueChange={field.onChange}
-                                      placeholder="e.g. Tomorrow morning 9am"
-                                      hour12
-                                    />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                          </div>
+                        <div className="col-span-4">
+                          <FormField
+                            control={form.control}
+                            name="screeningDateTime"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Screening Date & Time</FormLabel>
+                                <FormControl>
+                                  <SmartDatetimeInput
+                                    value={field.value}
+                                    onValueChange={field.onChange}
+                                    placeholder="e.g. Tomorrow morning 9am"
+                                    hour12
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
                         </div>
 
                         <FormField
