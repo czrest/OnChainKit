@@ -3,7 +3,7 @@
 import CallToActionCard from "@/components/home/CallToActionCard";
 import FeatureCards from "@/components/home/FeatureCards";
 import Hero from "@/components/home/Hero";
-import BackgroundOrbs from "../components/layouts/BackgroundOrbs";
+import BackgroundOrbs from "@/components/layouts/BackgroundOrbs";
 
 export default function HomePage() {
   return (
