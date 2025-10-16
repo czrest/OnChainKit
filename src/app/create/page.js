@@ -4,7 +4,6 @@ import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAccount } from "wagmi";
-import { motion } from "framer-motion";
 import {
  Card,
  CardContent,
@@ -14,9 +13,12 @@ import {
 } from "@/components/ui/card";
 import { surveySchema } from "@/lib/schema/survey-schema";
 import SurveyForm from "@/components/create/SurveyForm";
+import { useRouter } from "next/navigation";
+import { createSurvey } from "@/lib/survey-contract";
 
 export default function CreateSurveyPage() {
  const { address } = useAccount();
+ const router = useRouter();
 
  const form = useForm({
   resolver: zodResolver(surveySchema),
@@ -52,8 +54,20 @@ export default function CreateSurveyPage() {
     flexibleScheduling: values.flexibleScheduling,
     deadline: values.screeningDeadline,
    };
-   console.log(values);
+
+   const survey = await createSurvey(
+    values.title,
+    values.description,
+    values.questions,
+    values.reward,
+    address,
+    "targeted",
+    parseInt(values.numberOfRespondents),
+    screeningInfo
+   );
+
    toast.success("Survey created successfully!");
+   router.push(`/surveys/${survey.id}`);
   } catch (error) {
    console.error("Error creating survey:", error);
    toast.error("Failed to create survey");
@@ -61,29 +75,17 @@ export default function CreateSurveyPage() {
  };
 
  return (
-  <>
-   <main className="min-h-screen bg-gradient-to-b from-background to-muted/20 py-12">
-    <div className="container mx-auto px-4 max-w-3xl">
-     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-     >
-      <Card>
-       <CardHeader>
-        <CardTitle className="text-3xl">Create New Survey</CardTitle>
-        <CardDescription>
-         Create a survey and deposit ETH to reward respondents
-        </CardDescription>
-       </CardHeader>
-       <CardContent>
-        {/* survey form */}
-        <SurveyForm form={form} onSubmit={onSubmit} />
-       </CardContent>
-      </Card>
-     </motion.div>
-    </div>
-   </main>
-  </>
+  <Card>
+   <CardHeader>
+    <CardTitle className="text-3xl">Create New Survey</CardTitle>
+    <CardDescription>
+     Create a survey and deposit ETH to reward respondents
+    </CardDescription>
+   </CardHeader>
+   <CardContent>
+    {/* survey form */}
+    <SurveyForm form={form} onSubmit={onSubmit} />
+   </CardContent>
+  </Card>
  );
 }
