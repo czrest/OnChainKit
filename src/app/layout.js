@@ -2,10 +2,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { Toaster } from "sonner";
-import { ThemeProvider } from "@/components/theme-provider";
 import { PageTransition } from "@/components/page-transition";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/layouts/Footer";
+import ThemeProvider from "@/components/theme-provider";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/layouts/Footer";
 
 export const metadata = {
   title: "Decentralized Survey Hub",
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
             <PageTransition>
               <Navbar />
               {children}
-              <Footer/>
+              <Footer />
             </PageTransition>
           </Providers>
           <Toaster />

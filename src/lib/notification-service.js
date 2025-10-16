@@ -1,9 +1,7 @@
-// import type { Notification } from '@/app/types/survey'; // Remove type-only import for JS
-
-const NOTIFICATIONS_KEY = "surveychain_notifications";
+const NOTIFICATIONS_KEY = 'surveychain_notifications';
 
 export function getNotifications(userId) {
-  if (typeof window === "undefined") return [];
+  if (typeof window === 'undefined') return [];
 
   const stored = localStorage.getItem(NOTIFICATIONS_KEY);
   if (!stored) return [];
@@ -15,7 +13,7 @@ export function getNotifications(userId) {
 }
 
 export function addNotification(notification) {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
 
   const stored = localStorage.getItem(NOTIFICATIONS_KEY);
   const notifications = stored ? JSON.parse(stored) : [];
@@ -32,7 +30,7 @@ export function addNotification(notification) {
 }
 
 export function markNotificationAsRead(notificationId) {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
 
   const stored = localStorage.getItem(NOTIFICATIONS_KEY);
   if (!stored) return;
@@ -46,7 +44,7 @@ export function markNotificationAsRead(notificationId) {
 }
 
 export function clearAllNotifications(userId) {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
 
   const stored = localStorage.getItem(NOTIFICATIONS_KEY);
   if (!stored) return;
